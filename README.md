@@ -1,0 +1,237 @@
+# Easy Hallenbad-Ticket buchen mit 2 Klicks
+Bist du es Leid ständig Login-Daten, Bezahldate, TANs herauszukramen?
+Dieser Bot bestellt im Handumdrehen ein Ticket für das Schwimmbad. In meinem Fall das Auebad in Kassel. Allerdings setzen viele weitere Schwimmbäder die gleiche Software ein. 
+Für mich tut's das Programm, jedoch könnte dieses Skript abstrahiert werden und dann für eine ganze Reihe mehr Schwimmbäder eingesetzt werden:
+
+## Liste mit theoretisch kompatiblen Schwimmbädern: 
+
+- Aalen, Stadwerke
+- Alzenau
+- Alzey, Wartbergbad
+- Andernach, Freibad (im Aufbau)
+- Annweiler, Trifelsbad (im Aufbau)
+- Apolda, Sportpark
+- Arnsberg, NASS
+- Arnstadt, Sport- und Freizeitbad
+- Bad Bentheim, Mineraltherme
+- Bad Bergzabern
+- Bad Ems, Nassau
+- Bad Hersfeld, Kurbad Therme
+- Bad Homburg, Taunus Therme
+- Bad Kissingen, Kissalis
+- Bad Reichenhall, Rupertus Therme
+- Bad Sassendorf, Börde-Therme
+- Bad Waldliesborn, Walibo Therme
+- Baienfurt, Hallenbad Baienfurt
+- Baunatal, Aquapark
+- Bebra, Biberbad
+- Bendorf, Rhein
+- Bentheim, Mineraltherme
+- Bergisch Gladbach, Mediterana
+- Beuren, Panorama Therme
+- Biberach, Jordanbad
+- Bielefeld, BBF
+- Bingen-Ingelheim, rheinwelle
+- Bochum, Wasserwelten
+- Bonn, Stadt Bonn
+- Borken, Emergy
+- Bornheim
+- Bramsche, Hase Bad
+- Braunschweig, Stadtbad
+- Brühl, KarlsBad
+- Brühl (Baden)
+- Bückeburg (im Aufbau)
+- Calw, Freibad Calw-Stammheim
+- Darmstadt, Jugendstilbad
+- Deggendorf, Elypso
+- Delmenhorst, GraftTherme
+- Detmold, Aqualip
+- Dietzenbach
+- Dresden, Elbamare
+- Duisburg, Revierpark Mattlerbusch
+- Dülmen, Freizeitbad
+- Eilenburg, Schwimmhalle
+- Ellwangen, Wellenbad
+- Emmerich, EMBRICANA
+- Ennepetal, Kluterthöhle
+- Erfurt, Eishalle
+- Erkrath, Neanderbad
+- Eschborn, Mobiler Wertstoffhof
+- Esch-sur-Alzette (LUX)
+- Espelkamp, Freizeitbad Atoll
+- Flensburg, Campusbad
+- Flieden, Freibad
+- Forbach, Gemeindeverwaltung
+- Frankenthal, OstparkBad
+- Freiburg, Regiobäder
+- Freilassing, Badylon
+- Freising, fresh
+- Friedrichsdorf
+- Friesoythe, aquaferrum
+- Fulda, Rhön-Energie
+- Fuldatal, Waldschwimmbad
+- Gaimershaim, Aquamarin
+- Ganderkesee, SaunaHuus
+- Gau-Algesheim
+- Geestland, Moortherme
+- Gera, Hofwiesenbad
+- Gerlingen, Schwimmhalle
+- Gersthofen
+- Gevelsberg, Schwimm-in
+- Giengen, Bergbad
+- Gießen, alle Bäder
+- Glashütten
+- Glücksburg, Fördeland-Therme (im Aufbau)
+- Goch, GochNess
+- Goslar, Aquantic
+- Gotha, Stadt-Bad
+- Göttingen, Badeparadies
+- Grefrath, Gemeindewerke
+- Greven, Grevener Bäder
+- Groß-Gerau, Freibad/Hallenbad
+- Grünstadt, CabaLela Cabriobad
+- Gummersbach, Gumbala
+- Gütersloh, Freizeitbad Welle
+- Hagen, Hagenbad
+- Haldersleben, Rolli-Bad
+- Hannover
+- Hannover, Museen
+- Haßloch, Badepark
+- Hattersheim, Freibad
+- Heilbronn, Soleo
+- Heiligenstadt, Vitalpark
+- Heimbach, Freibad
+- Herne, Wananas
+- Herscheid (im Aufbau)
+- Herten, Copa Ca Backum
+- Hilden, Hildorado
+- Hürth, Familienbad de Bütt
+- Hockenheim, Aquadrom
+- Huntetal
+- Itzehoe, Schwimmzentrum (im Aufbau)
+- Kelsterbach, Sport- u. Wellnessbad
+- Kandern, Freibad
+- Karlsruhe, Europabad
+- Kassel, Städtische Werke
+- Kleinostheim, Vitamar
+- Koblenz
+- Köln, KölnBäder
+- Köln Dünnwald, Natur-Resort
+- Korbach, Goldbad
+- Kriftel, Parkbad
+- Landau, La Ola
+- Leer, Plytje
+- Leichlingen, Blütenbad
+- Leimen, Bäderpark
+- Leverkusen, Aqua-Vital
+- Lippstadt, CabrioLi
+- Lohfelden
+- Lörrach, Parkschwimmbad
+- Lübecker Schwimmbäder
+- Luckenwalde, Fläming Therme
+- Lüdinghausen, Klutenseebad
+- Ludwigsburg-Kornwestheim
+- Ludwigshafen, Freibad am Willersinnweiher
+- Lüneburg, Salztherme
+- Luxembourg (LUX), d'Coque
+- Maikammer, Verbandsgemeinde
+- Mainhardt
+- Maintal, Maintalbad
+- Mainz, Taubertsbergbad
+- Malsch
+- Mannheim
+- Marienberg, AQUAMARIEN
+- Meerbusch, swim4fun
+- Memmingen, Freibad
+- Moers, Enni
+- Mönchengladbach, NEW MOBIL UND AKTIV
+- Muttenz (CH), SLRG
+- Mühlacker, Stadtwerke
+- Mühlhausen, Thüringentherme
+- Mülheim-Kärlich, Freizeitbad Tauris
+- München, learn2ski (im Aufbau)
+- München, learn2swim
+- München, Stadtwerke
+- Münster, Bäder der Stadt Münster
+- Naumburg, bulabana kösalina
+- Nassau, Bad Ems
+- Neumünster, Bad am Stadtwald
+- Neusäß, Titania
+- Neuss, Bäder und Eissporthalle
+- Neustadt am Rübenberge, Balneon
+- Neustadt an der Weinstraße, Stadionbad
+- Neuwied, Deichwelle
+- Netphen, N-Flow
+- Nidderau, Nidderbad
+- Niedernhausen
+- Niefern-Öschelbronn, Gemeinde
+- Niestetal, Gemeinde Niestetal
+- Nordhorn, bnn Grafschaft
+- Obernsees, Therme
+- Obertshausen, monte mare
+- Oberstaufen, Aquaria
+- Oldenburg, Olantis (im Aufbau)
+- Olderdissen, Tierpark
+- Oberursel, Stadtwerke Oberursel
+- Osnabrück, Stadtwerke Osnabrück
+- Overath, Badino
+- Pforzheim, Goldstadtbäder
+- Pfullingen, Stadt
+- Pinneberg (im Aufbau)
+- Pohlheim, Hallenbad
+- Pößneck, Pößnecker Bäder
+- Potsdam, Bäder Stadtwerke Potsdam
+- Pregnitz, Cabriosol
+- Ratingen, Ratinger Bäder
+- Rehburg-Loccum
+- Regensburg, das Stadtwerk
+- Remscheid
+- Rendsburg, Stadtwerke
+- Renningen, Freibad
+- Reutte (AT), Alpentherme
+- Rhein-Pfalz-Kreis
+- Rietberg, Gartenschaupark
+- Rotenburg, Ronolulu
+- Sachsenheim, Aquasport Ulfers
+- Salzgitter, Thermalsolbad
+- Schmitten, Freibad
+- Schramberg, Badschnass
+- Schwäbisch Gmünd, Bäderbetriebe
+- Schweinfurt, SILVANA
+- Schwetzingen, bellamar
+- Seligenstadt, Freibad
+- Senden, Cabrio Bad Senden
+- Singen
+- Soest, AquaFun
+- Stade, Solemio
+- Stadthagen, Tropicana
+- Stuttgart, Stuttgarter Bäder
+- Tarp, Gemeinde Tarp
+- Trier, Bad an den Kaiserthermen
+- Tübingen
+- Tuttlingen, TuWass
+- Überlingen, Bodensee-Therme
+- Unterhaching, Freibad
+- Veitsbronn
+- Verden, Erlebnisbad Verwell
+- Waghäusel
+- Walferdange (LUX), PIDAL
+- Warthausen
+- Weil am Rhein, Laguna
+- Weilburg, Oberlahnbad
+- Weiterstadt
+- Werl, Freizeitbad
+- Werne, Natursolebad
+- Wickede (Ruhr)
+- Wiehl, Freizeit- und Sportstätten
+- Wiesloch, Stadtwerke
+- Wildau, Wildorado
+- Willich, De Bütt
+- Winnenden, Wunnebad
+- Winsen, Die Insel
+- Wolfsburg, Badeland
+- Wöllstein, Verbandsgemeinde
+- Wörth am Rhein
+- Wunstorf, Elements
+- Wuppertal, alle Bäder
+- Zell, Erlebnisbad
